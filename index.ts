@@ -15,7 +15,7 @@ const projectReference: ProjectReference = {
  * npm run start
  * ```
  */
-async function main(args: string[]): Promise<void> {
+async function main(): Promise<void> {
   const exporter = new JargonExporter({ token: process.env.TOKEN as string });
   const { data } = await exporter.exportProjectUnderDataTransformations({ projectReference });
 
@@ -32,6 +32,6 @@ async function main(args: string[]): Promise<void> {
 process.on("unhandledRejection", () => { });
 process.on("uncaughtException", () => { });
 
-main(process.argv.slice(2)).catch((err: Error) => {
+main().catch((err: Error) => {
   console.error(err);
 });
