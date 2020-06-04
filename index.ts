@@ -9,8 +9,7 @@ const projectReference: ProjectReference = {
 };
 
 /**
- * Runs extended exporter on reference to Botmock project,
- * before writing exported data to "./output".
+ * Exports data from project in `projectReference` to Jargon manifest, and response files.
  * @example
  * ```
  * npm run start
