@@ -1,6 +1,5 @@
 import { BaseExporter, Resources, DataTransformation, Botmock } from "@botmock/export";
 import { v4 } from "uuid";
-// import * as Jargon from "./types";
 
 export class JargonExporter extends BaseExporter {
   /**
