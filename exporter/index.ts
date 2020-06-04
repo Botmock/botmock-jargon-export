@@ -2,7 +2,13 @@ import { BaseExporter, Resources, DataTransformation, Botmock } from "@botmock/e
 // import * as Jargon from "./types";
 
 export class JargonExporter extends BaseExporter {
-  #collectResponsesByLocale = (blocks: Botmock.Message[]) => { };
+  /**
+   * Organizes: locales -> messages under that locale.
+   * @param blocks Array of Botmock blocks.
+   */
+  #collectResponsesByLocale = (blocks: Botmock.Message[]): Map<string, Botmock.Message[]> => {
+    return new Map();
+  };
   #outputTransformation = (resources: Resources): DataTransformation => {
     return [
       {
