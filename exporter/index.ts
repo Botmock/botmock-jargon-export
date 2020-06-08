@@ -3,7 +3,7 @@ import { v4 } from "uuid";
 
 export class JargonExporter extends BaseExporter {
   /**
-   * Organizes: locales -> messages under that locale.
+   * Organizes locales -> messages under that locale.
    * @param blocks Array of Botmock blocks.
    */
   #collectResponsesByLocale = (blocks: Botmock.Message[]): Map<string, Botmock.Block[]> => {
@@ -19,6 +19,10 @@ export class JargonExporter extends BaseExporter {
     }
     return collection;
   };
+  /**
+   * Returns sequence of file names and their contents represented as objects.
+   * @param resources Resources from original Botmock project.
+   */
   #outputTransformation = (resources: Resources): DataTransformation => {
     return [
       {
@@ -72,7 +76,8 @@ export class JargonExporter extends BaseExporter {
     ];
   };
   /**
-   *
+   * Required map for relating directory paths -> functions that should turn
+   * project resources into file contents at particular locations.
    */
   dataTransformations = new Map([
     ["./output", this.#outputTransformation,]
